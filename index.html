@@ -109,7 +109,75 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- 5. SVG Example -->
+    <div id="svg" class="example-section">
+        <h2><i class="fas fa-bezier-curve"></i> 5. Scalable Vector Graphics (SVG)</h2>
+        <p>
+            This example shows a scalable SVG image. Unlike bitmap images (like JPG or PNG), SVG images are vector-based and can scale to any size without losing quality. They're perfect for logos, icons, and simple illustrations.
+            
+            The SVG below will maintain its sharpness regardless of the display size or screen resolution. Try zooming in or viewing this page on different devices to see how the SVG remains crisp.
+        </p>
+        <div class="svg-container">
+            <svg class="svg-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background gradient -->
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#87CEFA;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                    </linearGradient>
+                    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:#f9ca24;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Sky background -->
+                <rect width="200" height="150" fill="url(#skyGradient)" />
+                
+                <!-- Ground -->
+                <rect width="200" height="50" y="150" fill="url(#groundGradient)" />
+                
+                <!-- Sun -->
+                <circle cx="40" cy="40" r="15" fill="url(#sunGradient)">
+                    <animate attributeName="cy" values="40;35;40" dur="5s" repeatCount="indefinite" />
+                </circle>
+                
+                <!-- Mountains in background -->
+                <polygon points="0,150 30,100 60,135 100,80 140,140 180,110 200,150" fill="#34495e" />
+                
+                <!-- Mountains in foreground -->
+                <polygon points="0,150 40,110 70,140 120,90 160,150" fill="#2c3e50" />
+                
+                <!-- Tree -->
+                <rect x="150" y="120" width="5" height="30" fill="#795548" />
+                <polygon points="140,120 152.5,100 165,120" fill="#2ecc71" />
+                <polygon points="143,105 152.5,85 162,105" fill="#27ae60" />
+                
+                <!-- Text label -->
+                <text x="100" y="180" text-anchor="middle" fill="#333" font-size="10" font-family="Arial, sans-serif" font-weight="bold">Responsive SVG Graphic</text>
+                
+                <!-- Small cloud with animation -->
+                <g>
+                    <ellipse cx="120" cy="30" rx="15" ry="10" fill="white" />
+                    <ellipse cx="110" cy="30" rx="10" ry="8" fill="white" />
+                    <ellipse cx="130" cy="30" rx="10" ry="8" fill="white" />
+                    <animate attributeName="transform" type="translate" values="0,0; 10,0; 0,0" dur="10s" repeatCount="indefinite" />
+                </g>
+                
+                <!-- Second cloud -->
+                <g>
+                    <ellipse cx="170" cy="50" rx="12" ry="8" fill="white" />
+                    <ellipse cx="160" cy="50" rx="8" ry="6" fill="white" />
+                    <ellipse cx="180" cy="50" rx="8" ry="6" fill="white" />
+                </g>
+            </svg>
+        </div>
+    </div>
 
   <!-- Footer -->
     <footer>
