@@ -308,3 +308,39 @@ li {
         background-color: var(--accent-color);
     }
 }
+
+/* 4. Picture example */
+.picture-container {
+    margin-top: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.picture-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.picture-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Orientation indicators */
+.orientation-indicator {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--dark-color);
+    color: white;
+    font-weight: 500;
+}
+
+.portrait-indicator,
+.landscape-indicator {
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
