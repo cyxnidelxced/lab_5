@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Lab 5: Responsive Images</h1>
-
+    
     <!-- Table of Contents -->
     <div class="contents">
         <h3><i class="fas fa-list"></i> Contents</h3>
@@ -22,12 +22,15 @@
             <li><a href="#svg"><i class="fas fa-bezier-curve"></i> Scalable Vector Graphics</a></li>
         </ul>
     </div>
-
+    
     <!-- 1. Responsive Background Image -->
     <div id="bg-image" class="example-section">
         <h2><i class="fas fa-image"></i> 1. Responsive Background Image</h2>
         <p>
-            This example demonstrates a responsive background image using CSS properties. The image's position and size change based on the viewport width:
+            <strong>What I've done:</strong> In this example, I've created a responsive background image using CSS properties. I've implemented media queries to adapt the image display based on screen size, ensuring optimal viewing across devices.
+        </p>
+        <p>
+            The image's position and size change based on the viewport width:
         </p>
         <ul>
             <li>On large screens (>768px): The image is centered and uses "cover" to fill the container</li>
@@ -45,10 +48,13 @@
         <p>Try resizing your browser to see how the image adapts to different viewport sizes.</p>
         <div class="bg-image-container"></div>
     </div>
-
+    
     <!-- 2. Object-fit Example -->
     <div id="object-fit" class="example-section">
         <h2><i class="fas fa-crop-alt"></i> 2. Object-fit and Object-position Properties</h2>
+        <p>
+            <strong>What I've done:</strong> For this example, I've applied object-fit and object-position properties to create a responsive image that scales without distortion. I've added media queries to dynamically change which portion of the image is visible at different screen sizes.
+        </p>
         <p>
             This example demonstrates how "object-fit: cover" combined with "object-position" creates responsive images that scale without distortion. The image maintains its aspect ratio while filling the container completely, and the visible portion changes based on screen size:
         </p>
@@ -63,10 +69,13 @@
             <p class="image-caption">Image using object-fit: cover and responsive object-position</p>
         </div>
     </div>
-
+    
     <!-- 3. Srcset Example for Resolution Switching -->
     <div id="resolution" class="example-section">
         <h2><i class="fas fa-exchange-alt"></i> 3. Resolution Switching with srcset and sizes</h2>
+        <p>
+            <strong>What I've done:</strong> I've implemented resolution switching by using the srcset and sizes attributes. I've created three versions of the same image at different resolutions (500px, 1000px, and 2000px) and added visual indicators to clearly demonstrate when the browser switches between them.
+        </p>
         <p>
             This example demonstrates resolution switching using the srcset and sizes attributes. The browser automatically selects the appropriate image based on the viewport width and device pixel ratio.
         </p>
@@ -96,10 +105,13 @@
             </div>
         </div>
     </div>
-
+    
     <!-- 4. Art Direction Example -->
     <div id="art-direction" class="example-section">
         <h2><i class="fas fa-mobile-alt"></i> 4. Art Direction with picture and source</h2>
+        <p>
+            <strong>What I've done:</strong> I've implemented art direction using the picture and source elements to display different image orientations based on screen size. For mobile devices, I've chosen a portrait-oriented image that works better on narrow screens, while wider screens receive a landscape orientation. I've added indicators to make the orientation change obvious.
+        </p>
         <p>
             This example demonstrates art direction using the picture and source elements. Different images with different orientations are displayed based on the viewport width:
         </p>
@@ -123,14 +135,15 @@
             </div>
         </div>
     </div>
-
+    
     <!-- 5. SVG Example -->
     <div id="svg" class="example-section">
         <h2><i class="fas fa-bezier-curve"></i> 5. Scalable Vector Graphics (SVG)</h2>
         <p>
+            <strong>What I've done:</strong> I've created a custom SVG illustration of a landscape scene with mountains, sun, clouds, and ground. I've enhanced it with gradients and simple animations to demonstrate SVG's capabilities. I've set it up to be fully responsive and maintain quality at any size, showcasing the advantages of vector graphics over raster images.
+        </p>
+        <p>
             This example shows a scalable SVG image. Unlike bitmap images (like JPG or PNG), SVG images are vector-based and can scale to any size without losing quality. They're perfect for logos, icons, and simple illustrations.
-            
-            The SVG below will maintain its sharpness regardless of the display size or screen resolution. Try zooming in or viewing this page on different devices to see how the SVG remains crisp.
         </p>
         <div class="svg-container">
             <svg class="svg-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +205,7 @@
             </svg>
         </div>
     </div>
-
+    
   <!-- Footer -->
     <footer>
     <p>"This fictitious website was created as an academic exercise for the Diablo Valley College course, ARTDM-173:Web Design II. In no way should this content be considered or used as a source of factual public information."</p>
