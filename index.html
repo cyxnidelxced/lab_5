@@ -83,6 +83,34 @@
         </div>
     </div>
 
+    <!-- 4. Art Direction Example -->
+    <div id="art-direction" class="example-section">
+        <h2><i class="fas fa-mobile-alt"></i> 4. Art Direction with picture and source</h2>
+        <p>
+            This example demonstrates art direction using the picture and source elements. Different images with different orientations are displayed based on the viewport width:
+        </p>
+        <ul>
+            <li>On narrow screens (<600px): A portrait-oriented image is shown (better suited for mobile)</li>
+            <li>On wider screens (≥600px): A landscape-oriented image is shown (better suited for desktop)</li>
+        </ul>
+        <p>This technique is used when you need to change the composition, crop, or orientation of an image rather than just its resolution to better suit different device layouts.</p>
+        <div class="picture-container">
+            <picture>
+                <!-- Art direction: portrait vs landscape orientation -->
+                <source media="(max-width: 599px)" srcset="https://picsum.photos/id/64/600/900">
+                <source media="(min-width: 600px)" srcset="https://picsum.photos/id/64/1200/600">
+                <img src="https://picsum.photos/id/64/1200/600" alt="Art direction example - orientation changes based on viewport width">
+            </picture>
+            
+            <!-- Orientation indicator that changes based on viewport width -->
+            <div class="orientation-indicator">
+                <div class="indicator portrait-indicator">Portrait Orientation (Mobile View)</div>
+                <div class="indicator landscape-indicator">Landscape Orientation (Desktop View)</div>
+            </div>
+        </div>
+    </div>
+    
+
   <!-- Footer -->
     <footer>
     <p>"This fictitious website was created as an academic exercise for the Diablo Valley College course, ARTDM-173:Web Design II. In no way should this content be considered or used as a source of factual public information."</p>
