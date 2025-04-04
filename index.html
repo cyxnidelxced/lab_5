@@ -32,6 +32,24 @@
         <div class="bg-image-container"></div>
     </div>
 
+    <!-- 2. Object-fit Example -->
+    <div id="object-fit" class="example-section">
+        <h2><i class="fas fa-crop-alt"></i> 2. Object-fit and Object-position Properties</h2>
+        <p>
+            This example demonstrates how "object-fit: cover" combined with "object-position" creates responsive images that scale without distortion. The image maintains its aspect ratio while filling the container completely, and the visible portion changes based on screen size:
+        </p>
+        <ul>
+            <li>On large screens: Image is centered (object-position: center)</li>
+            <li>On medium screens (≤768px): Image shows the top portion (object-position: top)</li>
+            <li>On small screens (≤480px): Image shows the left portion (object-position: left)</li>
+        </ul>
+        <p>This approach prevents stretching or distortion while ensuring the most important parts of the image remain visible at different screen sizes. Try resizing your browser to see the effect.</p>
+        <div class="object-fit-container">
+            <img class="object-fit-image" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1500" alt="Landscape with object-fit: cover and object-position">
+            <p class="image-caption">Image using object-fit: cover and responsive object-position</p>
+        </div>
+    </div>
+
   <!-- Footer -->
     <footer>
     <p>"This fictitious website was created as an academic exercise for the Diablo Valley College course, ARTDM-173:Web Design II. In no way should this content be considered or used as a source of factual public information."</p>
