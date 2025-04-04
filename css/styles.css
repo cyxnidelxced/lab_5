@@ -238,3 +238,17 @@ li {
 .object-fit-image:hover {
     transform: scale(1.02);
 }
+
+/* Make object-fit responsive by changing object-position at different screen sizes */
+@media (max-width: 768px) {
+    .object-fit-image {
+        object-position: top; /* Shows the top portion of the image on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .object-fit-image {
+        object-position: left; /* Shows the left portion of the image on small screens */
+        height: 250px;
+    }
+}
