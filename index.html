@@ -50,6 +50,39 @@
         </div>
     </div>
 
+    <!-- 3. Srcset Example for Resolution Switching -->
+    <div id="resolution" class="example-section">
+        <h2><i class="fas fa-exchange-alt"></i> 3. Resolution Switching with srcset and sizes</h2>
+        <p>
+            This example demonstrates resolution switching using the srcset and sizes attributes. The browser automatically selects the appropriate image based on the viewport width and device pixel ratio.
+        </p>
+        <ul>
+            <li>Small image (500px wide) - For smaller viewports</li>
+            <li>Medium image (1000px wide) - For medium viewports</li>
+            <li>Large image (2000px wide) - For large viewports or high-density screens</li>
+        </ul>
+        <p>The sizes attribute tells the browser how much of the viewport width the image will occupy at different breakpoints.</p>
+        <div class="srcset-container">
+            <!-- Resolution switching with directly embedded images that show their size -->
+            <img 
+                src="https://picsum.photos/id/124/1000/600" 
+                srcset="https://picsum.photos/id/124/500/300 500w, 
+                        https://picsum.photos/id/124/1000/600 1000w, 
+                        https://picsum.photos/id/124/2000/1200 2000w"
+                sizes="(max-width: 600px) 100vw, 
+                       (max-width: 1200px) 80vw,
+                       60vw"
+                alt="Responsive image using srcset for resolution switching">
+            
+            <!-- Resolution indicator that changes based on viewport width -->
+            <div class="resolution-indicator">
+                <div class="indicator small-screen">500px resolution (small screen)</div>
+                <div class="indicator medium-screen">1000px resolution (medium screen)</div>
+                <div class="indicator large-screen">2000px resolution (large screen)</div>
+            </div>
+        </div>
+    </div>
+
   <!-- Footer -->
     <footer>
     <p>"This fictitious website was created as an academic exercise for the Diablo Valley College course, ARTDM-173:Web Design II. In no way should this content be considered or used as a source of factual public information."</p>
