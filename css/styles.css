@@ -358,3 +358,22 @@ li {
         background-color: var(--secondary-color);
     }
 }
+
+/* 5. SVG example */
+.svg-container {
+    margin-top: 25px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+}
+
+.svg-image {
+    max-width: 100%;
+    height: auto;
+    transition: var(--transition);
+}
+
+.svg-image:hover {
+    transform: scale(1.1);
+}
