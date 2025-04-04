@@ -215,3 +215,26 @@ li {
         content: 'Background Image (Small Screen)';
     }
 }
+
+/* 2. Object-fit example */
+.object-fit-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.object-fit-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center; /* Default position */
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.object-fit-image:hover {
+    transform: scale(1.02);
+}
