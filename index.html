@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5: Responsive Images</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <h1>Lab 5: Responsive Images</h1>
+
+    <!-- Table of Contents -->
+    <div class="contents">
+        <h3><i class="fas fa-list"></i> Contents</h3>
+        <ul>
+            <li><a href="#bg-image"><i class="fas fa-image"></i> Responsive Background Image</a></li>
+            <li><a href="#object-fit"><i class="fas fa-crop-alt"></i> Object-fit and Object-position</a></li>
+            <li><a href="#resolution"><i class="fas fa-exchange-alt"></i> Resolution Switching</a></li>
+            <li><a href="#art-direction"><i class="fas fa-mobile-alt"></i> Art Direction</a></li>
+            <li><a href="#svg"><i class="fas fa-bezier-curve"></i> Scalable Vector Graphics</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. Responsive Background Image -->
+    <div id="bg-image" class="example-section">
+        <h2><i class="fas fa-image"></i> 1. Responsive Background Image</h2>
+        <p>
+            This example demonstrates a responsive background image using CSS properties. The image's position and size change based on the viewport width:
+        </p>
+        <ul>
+            <li>On large screens (>768px): The image is centered and uses "cover" to fill the container</li>
+            <li>On medium screens (768px and below): The image is positioned at the top center</li>
+            <li>On small screens (480px and below): The image uses "contain" for the size and is centered at the top</li>
+        </ul>
+        <p>
+            The CSS properties used are:
+        </p>
+        <ul>
+            <li>background-image</li>
+            <li>background-position</li>
+            <li>background-size</li>
+        </ul>
+        <p>Try resizing your browser to see how the image adapts to different viewport sizes.</p>
+        <div class="bg-image-container"></div>
+    </div>
+
+    <!-- 2. Object-fit Example -->
+    <div id="object-fit" class="example-section">
+        <h2><i class="fas fa-crop-alt"></i> 2. Object-fit and Object-position Properties</h2>
+        <p>
+            This example demonstrates how "object-fit: cover" combined with "object-position" creates responsive images that scale without distortion. The image maintains its aspect ratio while filling the container completely, and the visible portion changes based on screen size:
+        </p>
+        <ul>
+            <li>On large screens: Image is centered (object-position: center)</li>
+            <li>On medium screens (≤768px): Image shows the top portion (object-position: top)</li>
+            <li>On small screens (≤480px): Image shows the left portion (object-position: left)</li>
+        </ul>
+        <p>This approach prevents stretching or distortion while ensuring the most important parts of the image remain visible at different screen sizes. Try resizing your browser to see the effect.</p>
+        <div class="object-fit-container">
+            <img class="object-fit-image" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1500" alt="Landscape with object-fit: cover and object-position">
+            <p class="image-caption">Image using object-fit: cover and responsive object-position</p>
+        </div>
+    </div>
+
+    <!-- 3. Srcset Example for Resolution Switching -->
+    <div id="resolution" class="example-section">
+        <h2><i class="fas fa-exchange-alt"></i> 3. Resolution Switching with srcset and sizes</h2>
+        <p>
+            This example demonstrates resolution switching using the srcset and sizes attributes. The browser automatically selects the appropriate image based on the viewport width and device pixel ratio.
+        </p>
+        <ul>
+            <li>Small image (500px wide) - For smaller viewports</li>
+            <li>Medium image (1000px wide) - For medium viewports</li>
+            <li>Large image (2000px wide) - For large viewports or high-density screens</li>
+        </ul>
+        <p>The sizes attribute tells the browser how much of the viewport width the image will occupy at different breakpoints.</p>
+        <div class="srcset-container">
+            <!-- Resolution switching with directly embedded images that show their size -->
+            <img 
+                src="https://picsum.photos/id/124/1000/600" 
+                srcset="https://picsum.photos/id/124/500/300 500w, 
+                        https://picsum.photos/id/124/1000/600 1000w, 
+                        https://picsum.photos/id/124/2000/1200 2000w"
+                sizes="(max-width: 600px) 100vw, 
+                       (max-width: 1200px) 80vw,
+                       60vw"
+                alt="Responsive image using srcset for resolution switching">
+            
+            <!-- Resolution indicator that changes based on viewport width -->
+            <div class="resolution-indicator">
+                <div class="indicator small-screen">500px resolution (small screen)</div>
+                <div class="indicator medium-screen">1000px resolution (medium screen)</div>
+                <div class="indicator large-screen">2000px resolution (large screen)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Art Direction Example -->
+    <div id="art-direction" class="example-section">
+        <h2><i class="fas fa-mobile-alt"></i> 4. Art Direction with picture and source</h2>
+        <p>
+            This example demonstrates art direction using the picture and source elements. Different images with different orientations are displayed based on the viewport width:
+        </p>
+        <ul>
+            <li>On narrow screens (<600px): A portrait-oriented image is shown (better suited for mobile)</li>
+            <li>On wider screens (≥600px): A landscape-oriented image is shown (better suited for desktop)</li>
+        </ul>
+        <p>This technique is used when you need to change the composition, crop, or orientation of an image rather than just its resolution to better suit different device layouts.</p>
+        <div class="picture-container">
+            <picture>
+                <!-- Art direction: portrait vs landscape orientation -->
+                <source media="(max-width: 599px)" srcset="https://picsum.photos/id/64/600/900">
+                <source media="(min-width: 600px)" srcset="https://picsum.photos/id/64/1200/600">
+                <img src="https://picsum.photos/id/64/1200/600" alt="Art direction example - orientation changes based on viewport width">
+            </picture>
+            
+            <!-- Orientation indicator that changes based on viewport width -->
+            <div class="orientation-indicator">
+                <div class="indicator portrait-indicator">Portrait Orientation (Mobile View)</div>
+                <div class="indicator landscape-indicator">Landscape Orientation (Desktop View)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. SVG Example -->
+    <div id="svg" class="example-section">
+        <h2><i class="fas fa-bezier-curve"></i> 5. Scalable Vector Graphics (SVG)</h2>
+        <p>
+            This example shows a scalable SVG image. Unlike bitmap images (like JPG or PNG), SVG images are vector-based and can scale to any size without losing quality. They're perfect for logos, icons, and simple illustrations.
+            
+            The SVG below will maintain its sharpness regardless of the display size or screen resolution. Try zooming in or viewing this page on different devices to see how the SVG remains crisp.
+        </p>
+        <div class="svg-container">
+            <svg class="svg-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background gradient -->
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#87CEFA;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                    </linearGradient>
+                    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:#f9ca24;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Sky background -->
+                <rect width="200" height="150" fill="url(#skyGradient)" />
+                
+                <!-- Ground -->
+                <rect width="200" height="50" y="150" fill="url(#groundGradient)" />
+                
+                <!-- Sun -->
+                <circle cx="40" cy="40" r="15" fill="url(#sunGradient)">
+                    <animate attributeName="cy" values="40;35;40" dur="5s" repeatCount="indefinite" />
+                </circle>
+                
+                <!-- Mountains in background -->
+                <polygon points="0,150 30,100 60,135 100,80 140,140 180,110 200,150" fill="#34495e" />
+                
+                <!-- Mountains in foreground -->
+                <polygon points="0,150 40,110 70,140 120,90 160,150" fill="#2c3e50" />
+                
+                <!-- Tree -->
+                <rect x="150" y="120" width="5" height="30" fill="#795548" />
+                <polygon points="140,120 152.5,100 165,120" fill="#2ecc71" />
+                <polygon points="143,105 152.5,85 162,105" fill="#27ae60" />
+                
+                <!-- Text label -->
+                <text x="100" y="180" text-anchor="middle" fill="#333" font-size="10" font-family="Arial, sans-serif" font-weight="bold">Responsive SVG Graphic</text>
+                
+                <!-- Small cloud with animation -->
+                <g>
+                    <ellipse cx="120" cy="30" rx="15" ry="10" fill="white" />
+                    <ellipse cx="110" cy="30" rx="10" ry="8" fill="white" />
+                    <ellipse cx="130" cy="30" rx="10" ry="8" fill="white" />
+                    <animate attributeName="transform" type="translate" values="0,0; 10,0; 0,0" dur="10s" repeatCount="indefinite" />
+                </g>
+                
+                <!-- Second cloud -->
+                <g>
+                    <ellipse cx="170" cy="50" rx="12" ry="8" fill="white" />
+                    <ellipse cx="160" cy="50" rx="8" ry="6" fill="white" />
+                    <ellipse cx="180" cy="50" rx="8" ry="6" fill="white" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+  <!-- Footer -->
+    <footer>
+    <p>"This fictitious website was created as an academic exercise for the Diablo Valley College course, ARTDM-173:Web Design II. In no way should this content be considered or used as a source of factual public information."</p>
+    </footer>
+</body>
+</html>
