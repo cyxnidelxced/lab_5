@@ -252,3 +252,38 @@ li {
         height: 250px;
     }
 }
+
+/* 3. Srcset example */
+.srcset-container {
+    margin-top: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.srcset-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.srcset-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Resolution indicators */
+.resolution-indicator {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--dark-color);
+    color: white;
+    font-weight: 500;
+}
+
+.indicator {
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
