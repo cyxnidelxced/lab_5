@@ -344,3 +344,17 @@ li {
     border-radius: 4px;
     display: none;
 }
+
+@media (max-width: 599px) {
+    .portrait-indicator {
+        display: block;
+        background-color: var(--accent-color);
+    }
+}
+
+@media (min-width: 600px) {
+    .landscape-indicator {
+        display: block;
+        background-color: var(--secondary-color);
+    }
+}
