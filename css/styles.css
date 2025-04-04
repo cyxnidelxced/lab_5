@@ -287,3 +287,24 @@ li {
     border-radius: 4px;
     display: none;
 }
+
+@media (max-width: 600px) {
+    .small-screen {
+        display: block;
+        background-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .medium-screen {
+        display: block;
+        background-color: var(--secondary-color);
+    }
+}
+
+@media (min-width: 1201px) {
+    .large-screen {
+        display: block;
+        background-color: var(--accent-color);
+    }
+}
