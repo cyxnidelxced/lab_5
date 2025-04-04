@@ -70,3 +70,12 @@ p {
     margin-bottom: 20px;
     font-size: 1.05rem;
 }
+
+ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
