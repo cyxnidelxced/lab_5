@@ -191,3 +191,27 @@ li {
 .bg-image-container:hover {
     transform: scale(1.02);
 }
+
+@media (max-width: 768px) {
+    .bg-image-container {
+        height: 300px;
+        background-position: top center;
+    }
+    
+    .bg-image-container::after {
+        content: 'Background Image (Medium Screen)';
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-image-container {
+        height: 200px;
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .bg-image-container::after {
+        content: 'Background Image (Small Screen)';
+    }
+}
